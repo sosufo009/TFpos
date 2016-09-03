@@ -1,0 +1,15 @@
+{
+  "name": "tfpos",
+  "version": "1.0.0",
+  "description": "TF POS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Ryan Lion",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express3-handlebars": "^0.5.2"
+  }
+}
