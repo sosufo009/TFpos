@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/test', function(req, res) {
-    res.render('test',{layout: 'testlayout.handlebars'});
+    res.render('test',{layout: 'testlayout1.handlebars'});
 });
 
 
