@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/test', function(req, res) {
-    res.render('test');
+    res.render('test',{layout: 'viewBLayout.hbs'});
 });
 
 
