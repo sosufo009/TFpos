@@ -13,10 +13,17 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+app.get('/order*', function(req, res) {
+    res.render('order',{layout: 'orderLayout.handlebars'});
+});
+
+app.get('/login', function(req, res) {
+    res.render('login',{layout: 'loginLayout.handlebars'});
+});
+
 app.get('/test', function(req, res) {
     res.render('test',{layout: 'testlayout.handlebars'});
 });
-
 
 app.use(function(req,res){
   res.status(404);
