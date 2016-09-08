@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <title>
-        TF POS - Booking
+        TF POS - Login
     </title>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="shortcut icon" href="/favicon.ico" type="img/x-icon">
@@ -32,7 +32,6 @@
 
     <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/2.1.1/stamplay.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.5.8/angular-animate.js"></script>
     <script>
         Stamplay.init("tfpos");
     </script>
@@ -40,24 +39,41 @@
     <script src="/js/app.js"></script>
 </head>
 
-<body ng-app="app" ng-controller="order as ctrl">
-
+<body ng-app="app">
     <nav class="main-nav-outer" id="test">
         <div class="container">
             <ul class="main-nav">
                 <li><a href="/">回首頁</a></li>
-                <li><a href="/order">點餐</a></li>
                 <li class="small-logo">
-                    <a href="#header"><img src="img/small-logo.png" alt=""></a>
+                    <a href="/"><img src="img/small-logo.png" alt="回首頁"></a>
                 </li>
-                <li><a href="#client">訂單查詢</a></li>
                 <li><a href="#team">聯絡我們</a></li>
             </ul>
             <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
         </div>
     </nav>
+    <div class="container" style="margin-top:23px;">
+        <h2>
+      - 登入系統 -
+    </h2>
+    </div>
+    <div class="container jumbotron" ng-controller="test">
+        <form class="form-signin" ng-submit="login()">
+            <h2 class="form-signin-heading">登入</h2>
+            <label class="sr-only" for="inputEmail">Email address</label>
+            <input id="inputEmail" class="form-control" type="email" autofocus="" required="" placeholder="Email address">
+            <label class="sr-only" for="inputPassword">Password</label>
+            <input id="inputPassword" class="form-control" type="password" required="" placeholder="Password">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
+        </form>
+    </div>
+    <div class="container jumbotron">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">註冊</h2>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">申請帳號</button>
+        </form>
+    </div>
 
-    {{{body}}}
 
     <footer class="footer">
         <div class="container">

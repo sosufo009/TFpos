@@ -1,4 +1,4 @@
-angular.module('app', ['ngAnimate'])
+angular.module('app', [])
     .controller('test', [function() {
         var self = this;
         // alert('herllo');
@@ -18,6 +18,19 @@ angular.module('app', ['ngAnimate'])
     .controller('order', [function() {
         var self = this;
 
+        self.menuList = [{
+            id: 1,
+            name: '三明治',
+            price:20
+        }, {
+            id: 2,
+            name: '雞塊',
+            price:25
+        }, {
+            id: 3,
+            name: '蛋餅',
+            price:30
+        }];
 
         self.orderListOpenStatus = true;
 
@@ -28,5 +41,9 @@ angular.module('app', ['ngAnimate'])
             } else if (self.orderListOpenStatus != true) {
                 self.orderListOpenStatus = true;
             }
-        }
+        };
+        self.test = function() {
+            alert('hi');
+            console.log(self.menuList);
+        };
     }]);

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <title>
-        TF POS - Login
+        TF POS - Booking
     </title>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="shortcut icon" href="/favicon.ico" type="img/x-icon">
@@ -32,6 +32,7 @@
 
     <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/2.1.1/stamplay.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-animate.js"></script>
     <script>
         Stamplay.init("tfpos");
     </script>
@@ -39,21 +40,78 @@
     <script src="/js/app.js"></script>
 </head>
 
-<body ng-app="app">
+<body>
+
     <nav class="main-nav-outer" id="test">
         <div class="container">
             <ul class="main-nav">
                 <li><a href="/">回首頁</a></li>
+                <li><a href="/order">點餐</a></li>
                 <li class="small-logo">
-                    <a href="/"><img src="img/small-logo.png" alt="回首頁"></a>
+                    <a href="#header"><img src="img/small-logo.png" alt=""></a>
                 </li>
+                <li><a href="#client">訂單查詢</a></li>
                 <li><a href="#team">聯絡我們</a></li>
             </ul>
             <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
         </div>
     </nav>
 
-    {{{ body }}}
+    <div ng-app="app" ng-controller="order as ctrl">
+        <div class="container orderListForm">
+            <div class="orderListTitle">
+                <h2>清單:</h2>
+            </div>
+            <div class="orderList" ng-class="{'orderListOpen': ctrl.orderListOpenStatus, 'orderListClose': !ctrl.orderListOpenStatus} ">
+                <!-- <div class="orderList" class="orderListOpen"> -->
+                <div>
+
+                </div>
+            </div>
+            <div class="orderListArrow">
+                <img src="/img/down-arrow.png" ng-click="ctrl.openArrow()" />
+            </div>
+
+        </div>
+        <div class="container foodTitle">
+            <div class="foodTitle col-md-3">
+                餐點
+            </div>
+        </div>
+        <div class="container foodContent jumbotron">
+            <div class="col-md-10 col-xs-10 col-sm-10">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                項目
+                            </th>
+                            <th>
+                                名稱
+                            </th>
+                            <th>
+                                價格
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="tmp in ctrl.menuList">
+                            <td>
+                                {{ tmp.id }}
+                            </td>
+                            <td>
+                                {{ tmp.name }}
+                            </td>
+                            <td>
+                                {{tmp.price}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 
     <footer class="footer">
@@ -63,11 +121,6 @@
             </div>
             <span class="copyright">Copyright © 2015 | <a href="http://bootstraptaste.com/">made by TF Team</a></span>
         </div>
-        <!--
-      All links in the footer should remain intact.
-      Licenseing information is available at: http://bootstraptaste.com/license/
-      You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Knight
-  -->
     </footer>
 
 
