@@ -18,18 +18,26 @@ angular.module('app', [])
     .controller('order', [function() {
         var self = this;
 
+        self.orderList = [{
+            name: '三明治'
+        }, {
+            name: '果汁'
+        }];
         self.menuList = [{
-            id: 1,
+            id: 0,
             name: '三明治',
-            price:20
+            price: 20,
+            isshow: false
+        }, {
+            id: 1,
+            name: '雞塊',
+            price: 25,
+            isshow: false
         }, {
             id: 2,
-            name: '雞塊',
-            price:25
-        }, {
-            id: 3,
             name: '蛋餅',
-            price:30
+            price: 30,
+            isshow: false
         }];
 
         self.orderListOpenStatus = true;
@@ -42,8 +50,21 @@ angular.module('app', [])
                 self.orderListOpenStatus = true;
             }
         };
-        self.test = function() {
-            alert('hi');
-            console.log(self.menuList);
+        self.addOrder = function(id) {
+            self.orderList.push({
+                name: self.menuList[id].name
+            })
+            self.showDetail(id);
+
+        };
+
+        self.showDetail = function(id) {
+            var tmp = self.menuList.filter(function(obj) {
+                return obj.id == id;
+            });
+            if (tmp.length > 0) {
+                self.menuList[id].isshow = !self.menuList[id].isshow;
+                // console.log(self.menuList[id]);
+            }
         };
     }]);

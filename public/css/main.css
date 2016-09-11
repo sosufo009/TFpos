@@ -7,15 +7,23 @@
     border-right-style: solid;
     border-right-width: 1px;
     border-right-color: gray;
+    /*width:390px;height:300px;*/
+    overflow-x:hidden;
+    overflow-y:auto;
 
 }
 
 .orderListClose{
   visibility: hidden;
+  height: 0;
   margin-bottom: 0;
   margin-top: 0;
 }
 
+#menuItemDetail:hover
+{
+  background: blue;
+}
 /*.fade.ng-hide {
   opacity: 0;
 }
