@@ -1,0 +1,10 @@
+{
+  "appId": "tfpos",
+  "apiKey": "fe00ecf2cbbe18440bea1f032ad52795a80a378b3a07fe98d9aef19617c5488b",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

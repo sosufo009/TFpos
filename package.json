@@ -11,6 +11,9 @@
   "dependencies": {
     "express": "^4.14.0",
     "express3-handlebars": "^0.5.2",
-    "ejs":"*"
+    "ejs":"*",
+    "algoliasearch": "~3.7.0",
+    "bootstrap": "~3.3.5",
+    "ionicons": "~2.0.1"
   }
 }
