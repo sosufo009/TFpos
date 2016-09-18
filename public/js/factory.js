@@ -15,19 +15,21 @@
 //   }
 // });
 
-angular.module('app').factory('testFac', ['$q','$stamplay',function($q,$stamplay) {
-    function all() {
-        var deferred = $q.defer();
-        //
-        // var BookCollection = $stamplay.Cobject('book').Collection;
-        // BookCollection.fetch().then(function() {
-        //     deferred.resolve(BookCollection.instance);
-        // });
+// angular.module('app').factory('Auth', ['$firebaseAuth',function($firebaseAuth) {
+//     function create() {
+//       var ref = new Firebase('https://tfpos-7c516.firebaseio.com/');
+//       return $firebaseAuth(ref);
+//     }
+//
+//     return {
+//         create: create
+//     }
+// }]);
 
-        return deferred.promise;
-    }
+angular.module('app').factory("Auth", [
+  function($firebaseAuth) {
+    var ref = new Firebase('https://tfpos-7c516.firebaseio.com/');
+    return $firebaseAuth(ref);
 
-    return {
-        all: all
-    }
-}]);
+  }
+]);

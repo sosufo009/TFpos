@@ -1,2 +1,1 @@
-Stamplay.init("tfpos");
-angular.module('app', ['ngStamplay']);
+angular.module('app', ['firebase']);
